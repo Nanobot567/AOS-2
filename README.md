@@ -6,6 +6,4 @@
 
 ### Since this is the second version, it's a lot bigger and has a file size of a whopping 469 KB. AOS 1 has 11 KB.
 
-## FOR THE README, GO TO [AOS](https://github.com/Nanobot567/AOS-1)  AND CLICK ON README.MD
-
 ### Sidenote: I stopped working on GAMES and APPS to add them to AOS 3 :)
