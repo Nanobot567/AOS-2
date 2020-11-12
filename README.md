@@ -33,6 +33,4 @@ Some computers already have python installed, but not IDLE. To check this, type 
     > python
 ```
 
-An easier way to run it would be through a repl such as [repl.it](https://repl.it/languages/python3). Just copy-paste the code into the box on the left.
-
 ### Sidenote: I stopped working on GAMES and APPS to add them to AOS 3 :)
