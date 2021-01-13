@@ -26,9 +26,6 @@ i = 0
 
 
 
-DOSbatDwnld = "no"
-
-succBatDwnld = "no"
 
 crashProgram = "[NOT_DEFINED]"
 
@@ -49,34 +46,7 @@ def shutdown():
     exit()
 
 # ...never worked anyway.
-def notes():
-    print("Welcome to notes! type 'nhelp' for help with notes.")
-    cmd = ""
-    while cmd != "esc":
-        cmd = input("\nAOST/notes/: ")
-        if cmd == "nhelp":
-            print("availible commands:")
-            print("new ", "close ", "edit ", "delete \n")
-            while cmd != "esc":
-                cmd = input("\nAOST/notes/help/: ")
-                if cmd == "new":
-                    print("the new command allows you to create a new text file.")
-                if cmd == "close":
-                    print("the close command closes the current document.")
-                if cmd == "edit":
-                    print("the edit command edits a document.")
-                if cmd == "delete":
-                    print("the delete command deletes a document.")
-                if cmd == "new":                        
-                    cmd = input("Please type the name of the new file: ")
-                    filename = cmd 
-                    cmd = input("Please select the filetype: ")
-                    filetype = cmd
-                    f = open(filename + "." + filetype, "w")
-                    cmd = input("Now type what is in the file: ")
-                    f.write(cmd)
-                    print("done.")
-                    f.close
+
 
 # here we go. this is going to take a heck of a long time.
 def config():
@@ -84,10 +54,6 @@ def config():
     print("configure your AOS terminal. type help for help with config, quit to quit.")
     while cmd != "quit":
         cmd = input("config$ ")
-        if cmd == "help":
-            print("showing all config$ commands.")
-        if cmd == "terminate":
-            print("DELETES ALL AOS FILES FROM COMPUTER.")
 
     with yaspin.yaspin(Spinners.line, text="exiting config mash and saving changes...") as sp:
         time.sleep(2)
@@ -205,10 +171,7 @@ def samol():
                     print("Run allows you to run a kbpp document. syntax: run test")
                 if cmd == "debug":
                     print("debug lets you debug a kbpp file. It will output 'no errors' if it is fine, or an error will pop up.")
-                if cmd == "render":
-                    print("render makes a kbpp file into a renderable doc.")
-                if cmd == "shell":
-                    print("shell is the K-Ball++ shell prompt.")
+               
         if cmd == "run":
             while cmd != "esc":
                 print("Please select the kbpp file to run.\n")
@@ -251,7 +214,6 @@ def gamePortal():
             print("list of commands in gp:")
             print("install", " esc", "\n")
             print("list of games you can download:")
-            print("sample.arg ", "droids.arg \n")
             while cmd != "esc":
                 cmd = input("AOST/gp/help/: ")
                 if cmd == "install":
@@ -267,28 +229,6 @@ def gamePortal():
             cmd = input("great job, you ran me! type 'esc' to exit... ")
             while cmd != "esc":
                 cmd = input("great job, you ran me! type 'esc' to exit... ")
-        if cmd == "install droids":
-            print("\n" *4)
-            for i in progressbar.pb(range(30), "checking if 'droids.py' is present... ", 15):
-                time.sleep(0.01)
-            print("\n")
-            for i in progressbar.pb(range(10), "checking for modules in 'droids.py'... ", 10):
-                time.sleep(0.02)
-            print("\n")
-            for i in progressbar.pb(range(100), "downloading code in 'droids.py'... ", 10):
-                time.sleep(0.06)
-            print("\n")
-            print("Done! Running...")
-            time.sleep(1)
-            if cmd == "install droids":
-                cmd = input("WARNING this will quit AOS. The game will reboot AOS after the script is finished. Are you OK with this? [Y/N] ")
-                if cmd == "Y" or "y":
-                    print("type 'help' for help with droids.py.")
-                    os.system('python /Users/Nanobot567/Desktop/AOS/terminal/games/droids.py')
-                    quit()
-                
-            else:
-                print("ERROR while parsing droids.py, quitting.")
 
 
 
@@ -323,6 +263,7 @@ def kBrowse():
 
     print("This is KBROWSE, brought to you by kBall Industries.")
     print("\nType 'khelp' for help with kBrowse.\n")
+    print("WARNING, THIS IS A WIP BROWSER. THERE WILL BE MANY BUGS THAT WILL BE FIXED IN AOS 3.")
     cmd = ""
     net = "no"
     while cmd != "esc":
