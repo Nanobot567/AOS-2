@@ -42,7 +42,7 @@ def crash(crashProgram):
 
 def shutdown():
     print("\u001b[31m\nshutting down AOS...\u001b[0m")
-    time.sleep(2)
+    time.sleep(0.5)
     exit()
 
 # ...never worked anyway.
@@ -52,20 +52,20 @@ def shutdown():
 def config():
     cmd = ""
     print("configure your AOS terminal. type help for help with config, quit to quit.")
-    while cmd != "quit":
+    while cmd is not "quit":
         cmd = input("config$ ")
 
     with yaspin.yaspin(Spinners.line, text="exiting config mash and saving changes...") as sp:
         time.sleep(2)
     print("\n\n")
-    time.sleep(1)
+    time.sleep(0.5)
     startup()
 
 # just the help section. needed to seperate this from everything bc of OrGaNiZaTiOn
 def help():
     cmd = "null"
     print("\nshowing all availible commands. ")
-    print("help","fl","dir ", "esc ", "quit ", "gamePortal ", "notes ", "clock ", "calculator ", "install ", "kBrowse ", "shutdown ", "configure \n")
+    print("help\n","fl\n","dir\n ", "esc\n", "quit\n", "gamePortal\n", "notes\n", "clock\n", "calculator\n", "install\n", "kBrowse\n", "shutdown\n", "configure\n")
     print("showing all availible filetypes. ")
     print("x", " txt ", "rndr ", "ps ", "kbpp ", "arg ", "bat \n")
     print("type 'help' for the list again.")
@@ -277,11 +277,11 @@ def kBrowse():
                 cmd = input("AOST/kBrowse/khelp/: ")
                 if cmd == "search":
                     print("you use the command search to open the search bar.")
-                if cmd == "connect":
+                elif cmd == "connect":
                     print("connect connects you to the internet, if you have your pdModem thumbdrive inserted. If you need help with connecting your pdModem, type pdHelp.")
-                if cmd == "disconnect":
+                elif cmd == "disconnect":
                     print("the disconnect command disconnects you from the current network.")
-                if cmd == "netConnect -pdM +wifi":
+                elif cmd == "netConnect -pdM +wifi":
                     print("first off, how did you find this command? anyway.. this connects you to the network without using a pdModem thumbdrive.")
         if cmd == "connect":
             pass
