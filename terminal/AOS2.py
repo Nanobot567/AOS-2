@@ -71,60 +71,63 @@ def help():
     print("type 'help' for the list again.")
     while cmd != "esc":
         cmd = input("\nAOST/help/: ")
-        if cmd == "dir":
-            print("dir is used in fl to show everything in the directory.")
-            print("for example: \n \n")
-            print("AOST: fl")
-            print("AOST/fl: dir")
-            print("junk.rndr morejunk.txt main.x")
-            print("\ndir can also be used with the extension -h to view hidden files as well as regular files.")
-        if cmd == "fl":
-            print("fl is the standard file launcher for AOS, and can open any supported filetype.")
-            print("for example: \n \n")
-            print("AOST/: fl")
-            print("AOST/fl: readme.txt")
-            print("\n thanks for reading me :D")
-        if cmd == "esc":
-            print("esc allows you to quit any program that is running. can be used within anything, even this. so, you should probably open help again if you would like to keep searching.")
-        if cmd == "shutdown":
-            print("can only be used in the directory AOST. quits AOS.")
-        if cmd == "help":
-            print("\nshowing all availible commands. ")
-            print("help","fl","dir ", "esc ", "quit ", "gamePortal ", "notes ", "clock ", "calculator ", "install ", "kBrowse \n")
-            print("showing all availible filetypes. ")
-            print("x", " txt ", "rndr ", "ps ", "kbpp ", "arg ", "bat \n")
-        if cmd == "gamePortal":
-            print("gamePortal is a built-in game engine that can run any installed game.")
-        if cmd == "clock":
-            print("clock is a program that lets you see the time and date in your area.")
-        if cmd == "calculator":
-            print("Calculator is an app that can do simple equasions.")
-        if cmd == "kBrowse":
-            print("kBrowse is a simple web browser using the ethernet service pdModem.")
-        if cmd == "install":
-            print("install lets you download certain files from the internet.")
-        if cmd == "configure":
-            print("configure can be used (as of now) only in the AOST root. It sends you to the configOS, to configure your AOS system.")
-        if cmd == "x":
-            print(".x is a cross-platform filetype that can be read in MacOS as well as in AOS.")
-        if cmd == "txt":
-            print(".txt is a standard, formatted text filetype.")
-        if cmd == "rndr":
-            print(".rndr is a renderable file, meaning it can be used to run simple programs in potatoScript, KBall++, and more.")
-        if cmd == "ps":
-            print(".ps is the potatoScript filetype, and can be read by a potatoScript reader like smilePotato.")
-        if cmd == "kbpp":
-            print(".kbpp is the Kball++ filetype, and can be read by a KBPP debugger or runner such as SamolCamel Reader.")
-        if cmd == "arg":
-            print(".arg is the AOS renderable game filetype. it is used in AOS gamePortal as it is made for a game engine.")
-        if cmd == "dev/load":
-            i = 0
-            for i in progressbar.pb(range(20), "testing pb... ", 30):
-                time.sleep(0.1)
-            with yaspin.yaspin(Spinners.line, text="testing yaspin...") as sp:
-                time.sleep(2)
-        if cmd == "dev/sound":
-            pass
+
+        match cmd:
+
+            case "dir":
+                print("dir is used in fl to show everything in the directory.")
+                print("for example: \n \n")
+                print("AOST: fl")
+                print("AOST/fl: dir")
+                print("junk.rndr morejunk.txt main.x")
+                print("\ndir can also be used with the extension -h to view hidden files as well as regular files.")
+            case "fl":
+                print("fl is the standard file launcher for AOS, and can open any supported filetype.")
+                print("for example: \n \n")
+                print("AOST/: fl")
+                print("AOST/fl: readme.txt")
+                print("\n thanks for reading me :D")
+            case "esc":
+                print("esc allows you to quit any program that is running. can be used within anything, even this. so, you should probably open help again if you would like to keep searching.")
+            case "shutdown":
+                print("can only be used in the directory AOST. quits AOS.")
+            case "help":
+                print("\nshowing all availible commands. ")
+                print("help","fl","dir ", "esc ", "quit ", "gamePortal ", "notes ", "clock ", "calculator ", "install ", "kBrowse \n")
+                print("showing all availible filetypes. ")
+                print("x", " txt ", "rndr ", "ps ", "kbpp ", "arg ", "bat \n")
+            case "gamePortal":
+                print("gamePortal is a built-in game engine that can run any installed game.")
+            case "clock":
+                print("clock is a program that lets you see the time and date in your area.")
+            case "calculator":
+                print("Calculator is an app that can do simple equasions.")
+            case "kBrowse":
+                print("kBrowse is a simple web browser using the ethernet service pdModem.")
+            case "install":
+                print("install lets you download certain files from the internet.")
+            case "configure":
+                print("configure can be used (as of now) only in the AOST root. It sends you to the configOS, to configure your AOS system.")
+            case "x":
+                print(".x is a cross-platform filetype that can be read in MacOS as well as in AOS.")
+            case "txt":
+                print(".txt is a standard, formatted text filetype.")
+            case "rndr":
+                print(".rndr is a renderable file, meaning it can be used to run simple programs in potatoScript, KBall++, and more.")
+            case "ps":
+                print(".ps is the potatoScript filetype, and can be read by a potatoScript reader like smilePotato.")
+            case "kbpp":
+                print(".kbpp is the Kball++ filetype, and can be read by a KBPP debugger or runner such as SamolCamel Reader.")
+            case "arg":
+                print(".arg is the AOS renderable game filetype. it is used in AOS gamePortal as it is made for a game engine.")
+            case "dev/load":
+                i = 0
+                for i in progressbar.pb(range(20), "testing pb... ", 30):
+                    time.sleep(0.1)
+                with yaspin.yaspin(Spinners.line, text="testing yaspin...") as sp:
+                    time.sleep(2)
+            case "dev/sound":
+                pass
 
 
 
@@ -134,7 +137,7 @@ def samol():
     with yaspin.yaspin(Spinners.line, text="Starting [SCR]...") as sp:
         time.sleep(2)
     time.sleep(2)
-    print("""
+    print('''
 
                              _______  _______  __   __  _______  ___        _______  _______  __   __  _______  ___       
                             |       ||   _   ||  |_|  ||       ||   |      |       ||   _   ||  |_|  ||       ||   |      
@@ -154,7 +157,7 @@ def samol():
 
                                                                 the kbpp reader
     
-    """)
+    ''')
     print("As of now, SCR can only read pre-set kbpp files.")
     print("\nif you are having trouble with SCR, please type scrhelp.")
     cmd = ""
@@ -470,7 +473,7 @@ if pword == "":
     # this may seem random, but it's the shutdown command prompt.
     ays = input("\n\nare you sure you want to shut down AOS? (all unsaved documents will be lost) [Y/N] ")    
     if ays == "N":
-        print("\n"*4)
+        print("\n\n\n\n")
         startup()
     elif ays == "Y":
         shutdown()
