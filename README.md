@@ -1,6 +1,6 @@
 # AOS-2
 
-## AOS 2 is the newest version of AOS. To find the first version, go [here](https://github.com/Nanobot567/AOS-1)
+## AOS 2 is now archived. Please head over to [AOS-GUI](https://github.com/AOS-GUI/AOS-GUI/) to get the latest version of AOS!
 
 # ABOUT
 
